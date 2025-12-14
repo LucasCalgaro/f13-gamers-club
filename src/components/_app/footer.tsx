@@ -16,17 +16,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#d4a853] to-[#b8913d] rounded-lg flex items-center justify-center">
-                <Gamepad2 className="w-7 h-7 text-black" />
-              </div>
-              <div>
-                <span className="text-2xl font-bold text-white tracking-tight">
-                  F13
-                </span>
-                <span className="text-sm text-[#d4a853] block -mt-1 tracking-widest">
-                  GAMERS CLUB
-                </span>
-              </div>
+              <img src="/logo.svg" alt="Logo" className="h-24" />
             </div>
             <p className="text-white/50 text-sm leading-relaxed">
               Uma organização de gamers para gamers. Comunidade, competição e
