@@ -26,3 +26,21 @@ export interface Product {
   category: "camiseta" | "camiseta_elenco" | "acessorio" | "giftcard";
   sizes: string[];
 }
+
+export interface Player {
+  id: number;
+  nickname: string;
+  name: string;
+  role: string;
+  photo_url: string;
+}
+
+export interface Team {
+  id: number;
+  name: string;
+  game: string;
+  logo_url: string;
+  description: string;
+  achievements: string[];
+  players: Player[];
+}

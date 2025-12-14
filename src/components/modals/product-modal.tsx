@@ -29,7 +29,6 @@ export default function ProductModal({
   return (
     <AnimatePresence>
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -37,24 +36,19 @@ export default function ProductModal({
           onClick={onClose}
           className="absolute inset-0 bg-black/80 backdrop-blur-sm"
         />
-
-        {/* Modal */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           className="relative bg-[#1a1a1a] rounded-3xl overflow-hidden max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-white/10"
         >
-          {/* Close Button */}
           <button
             onClick={onClose}
             className="absolute top-4 right-4 z-10 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-white hover:text-[#d4a853] transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
-
           <div className="grid md:grid-cols-2">
-            {/* Image */}
             <div className="aspect-square bg-[#0a0a0a]">
               {product.image_url ? (
                 <img
@@ -68,8 +62,6 @@ export default function ProductModal({
                 </div>
               )}
             </div>
-
-            {/* Content */}
             <div className="p-8">
               <span className="text-[#d4a853] text-sm font-medium tracking-wider uppercase">
                 {categoryLabels[product.category]}
@@ -80,12 +72,9 @@ export default function ProductModal({
               <p className="text-white/60 leading-relaxed mb-6">
                 {product.description || "Produto exclusivo F13 Gamers Club."}
               </p>
-
               <div className="text-4xl font-bold text-[#d4a853] mb-8">
                 R$ {product.price?.toFixed(2).replace(".", ",")}
               </div>
-
-              {/* Sizes */}
               {product.sizes?.length > 0 && (
                 <div className="mb-6">
                   <label className="text-white/50 text-sm font-medium block mb-3">
@@ -108,8 +97,6 @@ export default function ProductModal({
                   </div>
                 </div>
               )}
-
-              {/* Quantity */}
               <div className="mb-8">
                 <label className="text-white/50 text-sm font-medium block mb-3">
                   Quantidade
@@ -132,14 +119,10 @@ export default function ProductModal({
                   </button>
                 </div>
               </div>
-
-              {/* Add to Cart */}
               <Button className="w-full bg-[#d4a853] text-black hover:bg-[#e5b964] h-14 text-lg font-bold rounded-xl">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Adicionar ao Carrinho
               </Button>
-
-              {/* Stock */}
               <p className="text-white/30 text-sm text-center mt-4">
                 {product.stock > 0
                   ? `${product.stock} em estoque`
